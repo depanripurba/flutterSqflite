@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Aplikasi dengan sqflite",
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -76,6 +77,7 @@ class HalamanInputchild extends State<HalamanInput>{
     var mhs = Mahasiswa(cnama.text,cjurusan.text);
     await db.simpanData(mhs);
     print("data berhasil di simmpan");
+     return Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext contex)=> new HomePage()));
   }
   
   Widget build(BuildContext context){
